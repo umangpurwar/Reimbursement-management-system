@@ -23,4 +23,5 @@ urlpatterns = [
     path("api/token/", TokenObtainPairView.as_view()),       # login --> get JWT
     path("api/token/refresh/", TokenRefreshView.as_view()),  # refresh JWT
     path("api/", include("expenses.urls")),
+    path("api/receipts/", include("receipts.urls")),
 ]
