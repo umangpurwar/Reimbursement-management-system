@@ -6,7 +6,7 @@ A role-based expense reimbursement system designed to streamline the submission,
 
 ## Overview
 
-This application allows employees to submit expense claims along with supporting receipts, while managers and administrators review and take appropriate action. It demonstrates a practical implementation of role-based access control, multi-step approvals, and full-stack integration between a Django REST backend and a Vue frontend.
+This application allows employees to submit expense claims along with supporting receipts, while managers and administrators review and take appropriate action. This project was developed as part of the Odoo Hackathon 2026, with a focus on designing a practical and scalable solution for expense management and structured approval workflows.
 
 ---
 
@@ -93,8 +93,7 @@ Environment Configuration
 Create a .env file inside the frontend directory:
 VITE_API_BASE_URL=http://127.0.0.1:8000/api/
 
-``
-
+```
 Key Concepts
 1. Role-based access control (RBAC)
 2. Multi-step approval workflow
