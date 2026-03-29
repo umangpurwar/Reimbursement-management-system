@@ -15,7 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
 from django.urls import path, include
+from django.urls import re_path
+from django.views.generic import TemplateView
+from django.views.static import serve
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
@@ -23,4 +27,24 @@ urlpatterns = [
     path("api/token/", TokenObtainPairView.as_view()),       # login --> get JWT
     path("api/token/refresh/", TokenRefreshView.as_view()),  # refresh JWT
     path("api/", include("expenses.urls")),
+    re_path(
+        r"^assets/(?P<path>.*)$",
+        serve,
+        {"document_root": settings.FRONTEND_DIST_DIR / "assets"},
+    ),
+    path(
+        "favicon.svg",
+        serve,
+        {"path": "favicon.svg", "document_root": settings.FRONTEND_DIST_DIR},
+    ),
+    path(
+        "icons.svg",
+        serve,
+        {"path": "icons.svg", "document_root": settings.FRONTEND_DIST_DIR},
+    ),
+    re_path(
+        r"^(?!api/|admin/|assets/|favicon\.svg$|icons\.svg$).*$",
+        TemplateView.as_view(template_name="index.html"),
+        name="frontend",
+    ),
 ]
