@@ -111,3 +111,37 @@ Future Enhancements
 Conclusion
 
 This project demonstrates a complete full-stack implementation of an expense management system with real-world features such as authentication, role-based workflows, and structured approvals. It reflects a practical approach to designing scalable and maintainable web applications.
+
+# Screenshots
+
+# home view
+
+<img width="1920" height="1200" alt="Screenshot (123)" src="https://github.com/user-attachments/assets/68f1f3c8-a8d6-46f3-8d1b-8fb73df0a095" />
+
+#login view
+
+<img width="1920" height="1200" alt="Screenshot (124)" src="https://github.com/user-attachments/assets/9d0a2526-f77f-4845-abdf-8087d0b56757" />
+
+# employee page
+
+<img width="1920" height="1200" alt="Screenshot (125)" src="https://github.com/user-attachments/assets/b7957c9d-aed7-4245-a872-8166bdd918c9" />
+
+# employee expense page
+
+<img width="1920" height="1200" alt="Screenshot (126)" src="https://github.com/user-attachments/assets/1878c0e2-6ce2-4e1d-b629-387952292d32" />
+
+# submit expense page
+
+<img width="1920" height="1200" alt="Screenshot (130)" src="https://github.com/user-attachments/assets/f23babd2-55d6-42f8-b07b-629757ad31b9" />
+
+# manager/director/cfo page 
+
+<img width="1920" height="1200" alt="Screenshot (131)" src="https://github.com/user-attachments/assets/e0e05dc1-ea9f-45fe-9b35-dae4b0313672" />
+
+# pending approvals , after approving or rejecting they will go away 
+
+<img width="1920" height="1200" alt="Screenshot (132)" src="https://github.com/user-attachments/assets/6d70b90e-685a-45fe-a9cd-5f3b6d19acfd" />
+
+# IT admin dashboard
+
+<img width="1920" height="1200" alt="Screenshot (134)" src="https://github.com/user-attachments/assets/119cb524-871a-42ba-be4c-cd092e059c2a" />
