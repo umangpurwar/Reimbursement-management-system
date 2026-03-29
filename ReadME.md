@@ -1,8 +1,2 @@
-# reimbursement-management-system (Backend)
-
-## Setup
-
-pip install -r requirements.txt  
-python manage.py migrate  
-python manage.py createsuperuser  
-python manage.py runserver  
+# Reimbursement-management-system
+A role based reimbursement management system with structured approval workflows, enabling employees to submit expense claims and managers to efficiently review, approve, or reject them.
