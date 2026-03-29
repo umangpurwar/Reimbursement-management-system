@@ -1,12 +1,4 @@
-"""
-receipts/audit_service.py
---------------------------
-Creates a ReceiptAudit record when a scan is linked to an expense.
-Called once per linking — idempotent via get_or_create guard.
 
-Threshold constants are at module level so they can be overridden
-in tests or via Django settings without touching business logic.
-"""
 
 from __future__ import annotations
 
@@ -24,20 +16,6 @@ _DISCREPANCY_MIN_INR = Decimal("50.00")
 
 
 def create_audit(scan: ReceiptScan, expense_id: int, submitted_amount_inr: Decimal) -> ReceiptAudit:
-    """
-    Create (or return existing) ReceiptAudit for a scan↔expense link.
-
-    Idempotent: if an audit already exists for this scan, it is returned
-    unchanged. This guards against duplicate calls from retry flows.
-
-    Args:
-        scan:                  The ReceiptScan being linked.
-        expense_id:            PK of the Expense (int — no FK import needed).
-        submitted_amount_inr:  The amount the employee typed in the form (INR).
-
-    Returns:
-        ReceiptAudit instance.
-    """
     existing = ReceiptAudit.objects.filter(scan=scan).first()
     if existing:
         logger.info("Audit already exists for Scan #%s — returning existing.", scan.pk)

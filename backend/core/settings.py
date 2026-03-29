@@ -130,3 +130,11 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated",
     ],
 }
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+EXCHANGE_RATE_API = os.getenv("EXCHANGE_RATE_API")
+COUNTRIES_API = os.getenv("COUNTRIES_API")

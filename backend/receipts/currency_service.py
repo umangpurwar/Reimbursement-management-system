@@ -1,5 +1,5 @@
 from __future__ import annotations
-
+from django.conf import settings
 import logging
 import time
 from functools import lru_cache
@@ -25,16 +25,6 @@ _currencies_fetched_at: float = 0.0
  
 
 def convert_to_inr(amount: float, from_currency: str) -> tuple[float, float]:
-    """
-    Convert *amount* in *from_currency* to INR.
-
-    Returns:
-        (inr_amount, exchange_rate)
-        exchange_rate is "1 {from_currency} = X INR"
-
-    Raises:
-        CurrencyError if rate lookup fails.
-    """
     from_currency = from_currency.upper().strip()
 
     if from_currency == BASE_CURRENCY:
@@ -90,7 +80,7 @@ def _get_rates() -> dict[str, float]:
     if _rates_cache and (time.time() - _rates_fetched_at) < _RATES_TTL_SECONDS:
         return _rates_cache
 
-    url = f"https://api.exchangerate-api.com/v4/latest/{BASE_CURRENCY}"
+    url = f"{settings.EXCHANGE_RATE_API}/{BASE_CURRENCY}"
     try:
         resp = requests.get(url, timeout=8)
         resp.raise_for_status()
@@ -126,7 +116,7 @@ def _get_country_currencies() -> list[dict]:
     if _currencies_cache and (time.time() - _currencies_fetched_at) < _COUNTRIES_TTL_SECONDS:
         return _currencies_cache
 
-    url = "https://restcountries.com/v3.1/all?fields=name,currencies"
+    url = settings.COUNTRIES_API
     try:
         resp = requests.get(url, timeout=10)
         resp.raise_for_status()
