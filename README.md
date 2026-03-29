@@ -93,35 +93,21 @@ Environment Configuration
 Create a .env file inside the frontend directory:
 VITE_API_BASE_URL=http://127.0.0.1:8000/api/
 
-```
-
-API Endpoints (Overview)
-Authentication
-POST /api/token/
-POST /api/token/refresh/
-Expenses
-POST /api/expenses/
-GET /api/expenses/my/
-Approvals
-GET /api/approvals/pending/
-PATCH /api/approvals/{id}/action/
-Receipts
-POST /api/receipts/scan/
-POST /api/receipts/convert/
+``
 
 Key Concepts
-Role-based access control (RBAC)
-Multi-step approval workflow
-Token-based authentication with refresh handling
-Transaction-safe operations in backend
-Separation of concerns between frontend and backend
-Centralized API handling in frontend
+1. Role-based access control (RBAC)
+2. Multi-step approval workflow
+3. Token-based authentication with refresh handling
+4. Transaction-safe operations in backend
+5. Separation of concerns between frontend and backend
+6. Centralized API handling in frontend
 
 Future Enhancements
-Email notifications for approval updates
-Advanced analytics and reporting
-Improved mobile responsiveness
-Integration with cloud storage for receipts
+1.Email notifications for approval updates
+2. Advanced analytics and reporting
+3. Improved mobile responsiveness
+4. Integration with cloud storage for receipts
 
 Conclusion
 
